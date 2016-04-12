@@ -1,0 +1,46 @@
+{
+  "name": "homepage",
+  "version": "0.0.0",
+  "description": "Homepage for rars.github.io",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/karma/bin/karma start --single-run",
+    "dist": "webpack --config webpack.config.dist.js -p",
+    "dev": "webpack --config webpack.config.dev.js -d",
+    "watch": "webpack --config webpack.config.dev.js --watch -d"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rars/homepage.git"
+  },
+  "keywords": [
+    "angular",
+    "homepage"
+  ],
+  "author": "Richard Russell",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rars/homepage/issues"
+  },
+  "homepage": "https://github.com/rars/homepage",
+  "devDependencies": {
+    "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.8.5",
+    "jasmine": "^2.4.1",
+    "json-loader": "^0.5.4",
+    "karma": "^0.13.22",
+    "node-sass": "^3.4.2",
+    "raw-loader": "^0.5.1",
+    "sass-loader": "^3.2.0",
+    "style-loader": "^0.13.1",
+    "ts-loader": "^0.8.1",
+    "typescript": "^1.8.9",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.12.14"
+  },
+  "dependencies": {
+    "angular": "^1.5.3",
+    "font-awesome": "^4.5.0"
+  }
+}
