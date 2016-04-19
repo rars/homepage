@@ -33,13 +33,10 @@ input[type="checkbox"]#r2menutoggle {
   top: 0px;
   left: 0px;
   z-index: 100;
-  visibility: hidden;
-  transform: translate3d(-300px, 0, 0);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  background-color: rgba(106, 87, 80, 0.75);
-  transition: transform 0.5s, visibility 0s 0.5s;
+  background-color: rgba(106, 87, 80, 1);
 
 //background: #606a88; /* Old browsers */
 //background: -moz-linear-gradient(top,  #606a88 0%, #3f4a6b 100%); /* FF3.6-15 */
@@ -77,6 +74,7 @@ input[type="checkbox"]#r2menutoggle {
 
   .r2-menu-item:hover {
     background-color: #b5a397;
+    border-left: 4px solid #e4e4e4;
   }
 }
 
@@ -124,12 +122,26 @@ input[type="checkbox"]#r2menutoggle {
   }
 }
 
-input[type="checkbox"]#r2menutoggle:checked ~ div.r2-body-content {
-  transform: translate3d(300px, 0, 0);
+@media screen and (max-width: 400px) {
+  .r2-menu {
+    transform: translate3d(-300px, 0, 0);
+    transition: transform 0.5s, visibility 0s 0.5s;
+    visibility: hidden;
+  }
+
+  input[type="checkbox"]#r2menutoggle:checked ~ div.r2-body-content {
+    transform: translate3d(300px, 0, 0);
+  }
+
+  input[type="checkbox"]#r2menutoggle:checked ~ div.r2-menu {
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+    transition-delay: 0s;
+  }
 }
 
-input[type="checkbox"]#r2menutoggle:checked ~ div.r2-menu {
-  transform: translate3d(0, 0, 0);
-  visibility: visible;
-  transition-delay: 0s;
+@media screen and (min-width: 401px) {
+  .r2-body-content {
+    transform: translate3d(300px, 0, 0);
+  }
 }
