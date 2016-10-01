@@ -1,7 +1,7 @@
 {
-  "ambientDependencies": {
-    "angular": "registry:dt/angular#1.5.0+20160328125810",
-    "jquery": "registry:dt/jquery#1.10.0+20160316155526",
-    "require": "registry:dt/require#2.1.20+20160316155526"
+  "globalDependencies": {
+    "angular": "registry:dt/angular#1.5.0+20160922195358",
+    "jquery": "registry:dt/jquery#1.10.0+20160929162922",
+    "require": "registry:dt/require#2.1.20+20160919185614"
   }
 }

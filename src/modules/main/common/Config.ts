@@ -1,5 +1,3 @@
-import {HexTilesComponent} from '../components/HexTiles/HexTilesComponent';
-
 export class Config {
   static $inject = ['$stateProvider', '$urlRouterProvider'];
 
