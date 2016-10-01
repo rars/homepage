@@ -1,7 +1,9 @@
 export class MainController {
   public sideMenuVisible: boolean;
 
-  constructor() {
+  static $inject = ['$state'];
+
+  constructor(private $state: any) {
     this.sideMenuVisible = false;
   }
 
