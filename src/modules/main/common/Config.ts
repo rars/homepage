@@ -1,17 +1,18 @@
 export class Config {
-  static $inject = ['$stateProvider', '$urlRouterProvider'];
+  public static $inject: Array<string> = [
+    '$stateProvider',
+    '$urlRouterProvider'
+  ];
 
-  constructor($stateProvider, $urlRouterProvider) {
+  public constructor(
+      $stateProvider,
+      $urlRouterProvider) {
     $urlRouterProvider.otherwise('/home');
 
     $stateProvider
       .state('home', {
         url: '/home',
         template: '<home></home>'
-      })
-      .state('game', {
-        url: '/game',
-        template: '<hex-tiles></hex-tiles>'
       });
   }
 }

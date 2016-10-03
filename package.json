@@ -26,17 +26,17 @@
   },
   "homepage": "https://github.com/rars/homepage",
   "devDependencies": {
-    "css-loader": "^0.23.1",
+    "css-loader": "^0.25.0",
     "extract-text-webpack-plugin": "^1.0.1",
-    "file-loader": "^0.8.5",
+    "file-loader": "^0.9.0",
     "html-webpack-plugin": "^2.15.0",
     "jasmine": "^2.4.1",
     "json-loader": "^0.5.4",
-    "karma": "^0.13.22",
+    "karma": "^1.3.0",
     "less": "^2.7.1",
     "node-sass": "^3.4.2",
     "raw-loader": "^0.5.1",
-    "sass-loader": "^3.2.0",
+    "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
     "ts-loader": "^0.8.1",
     "tslint": "^3.15.1",
@@ -47,7 +47,8 @@
   },
   "dependencies": {
     "angular": "^1.5.3",
-    "angular-ui-router": "^0.2.18",
-    "font-awesome": "^4.5.0"
+    "angular-ui-router": "^0.3.1",
+    "font-awesome": "^4.5.0",
+    "three": "^0.81.2"
   }
 }

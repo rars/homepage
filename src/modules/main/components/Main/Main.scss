@@ -19,6 +19,18 @@ body {
   overflow-x: hidden;
 }
 
+h2 {
+  display: block;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-weight: 300;
+  font-size: 30px;
+}
+
+section.rars-section {
+  text-align: center;
+}
+
 input[type="checkbox"]#r2menutoggle {
   position: absolute;
   left: 0;

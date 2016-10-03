@@ -1,13 +1,16 @@
 export class MainController {
   public sideMenuVisible: boolean;
 
-  static $inject = ['$state'];
+  public static $inject: Array<string> = [
+    '$state'
+  ];
 
-  constructor(private $state: any) {
+  public constructor(
+      private $state: any) {
     this.sideMenuVisible = false;
   }
 
-  public toggleMenu() {
+  public toggleMenu(): void {
     this.sideMenuVisible = !this.sideMenuVisible;
   }
 }
