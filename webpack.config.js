@@ -1,3 +1,4 @@
+var webpack = require('webpack');
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -5,10 +6,10 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 // https://github.com/brechtbilliet/angular-typescript-webpack/blob/master/webpack/loaders.js
 
 module.exports = {
-    entry: ['./src/main.ts'],
-    output: {
-        path: path.join(__dirname, 'dist'),
-        filename: 'bundle.js'
+    entry: {
+      'polyfills': './src/polyfills.ts',
+      'vendor': './src/vendor.ts',
+      'app': './src/main.ts'
     },
     resolve: {
         root: path.join(__dirname, 'src', 'modules'),
@@ -32,7 +33,7 @@ module.exports = {
             },
             {
                 test: /\.tsx?$/,
-                loader: 'ts-loader'
+                loaders: ['ts-loader', 'angular2-template-loader']
             },
             {
                 test: /\.css$/,
@@ -40,7 +41,8 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                loader: ExtractTextPlugin.extract('style-loader', 'css!sass')
+                exclude: /node_modules/,
+                loader: 'raw!sass'
             },
             {
                 test: /\.html$/,
@@ -71,12 +73,16 @@ module.exports = {
         fs: 'empty'
     },
     plugins: [
+      new webpack.optimize.CommonsChunkPlugin({
+        name: ['app', 'vendor', 'polyfills']
+      }),
       new HtmlWebpackPlugin({
           title: 'rars',
           template: path.join(__dirname, 'src', 'index.html'),
           inject: 'body',
-          hash: true
+          hash: true,
+          chunksSortMode: 'dependency'
         }),
-      new ExtractTextPlugin('styles.css')
+      new ExtractTextPlugin('[name].styles.css')
     ]
 };

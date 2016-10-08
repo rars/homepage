@@ -1,8 +1,10 @@
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { enableProdMode } from '@angular/core';
+import { AppModule } from './app/app.module';
 
-import 'angular';
 import 'font-awesome/css/font-awesome.min.css';
 
-import './modules/main/main';
-
-const app = angular.module('rars-homepage',
-  ['rars.homepage.main']);
+if (process.env.ENV === 'production') {
+  enableProdMode();
+}
+platformBrowserDynamic().bootstrapModule(AppModule);

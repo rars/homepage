@@ -1,13 +1,19 @@
+import { Component } from '@angular/core';
 import * as THREE from 'three';
 
 const TWOPI = Math.PI * 2.0;
 
-export class LineCanvasController {
+@Component({
+  selector: 'rars-line-canvas',
+  templateUrl: './line-canvas.component.html',
+  styles: [require('./line-canvas.component.scss')]
+})
+export class LineCanvasComponent {
   private static WIDTH = 512;
   private static HEIGHT = 256;
 
   private static VIEW_ANGLE = 45;
-  private static ASPECT = LineCanvasController.WIDTH / LineCanvasController.HEIGHT;
+  private static ASPECT = LineCanvasComponent.WIDTH / LineCanvasComponent.HEIGHT;
   private static NEAR = 0.1;
   private static FAR = 10000;
 
@@ -22,7 +28,9 @@ export class LineCanvasController {
 
   public static $inject: Array<string> = [];
 
-  public constructor() {
+  public constructor() {}
+
+  public ngOnInit() {
     const canvas = this.getCanvas();
 
     this.renderer = new THREE.WebGLRenderer({
@@ -32,10 +40,10 @@ export class LineCanvasController {
     });
 
     this.camera = new THREE.PerspectiveCamera(
-      LineCanvasController.VIEW_ANGLE,
+      LineCanvasComponent.VIEW_ANGLE,
       canvas.clientWidth / canvas.clientHeight,
-      LineCanvasController.NEAR,
-      LineCanvasController.FAR);
+      LineCanvasComponent.NEAR,
+      LineCanvasComponent.FAR);
 
     this.camera.position.set(0, 0, 100);
     this.camera.lookAt(new THREE.Vector3(0, 0, 0));
@@ -76,12 +84,12 @@ export class LineCanvasController {
       color: 0xad8cff
     });
 
-    const pointMaterial = LineCanvasController.createSpriteMaterial();
+    const pointMaterial = LineCanvasComponent.createSpriteMaterial();
 
     this.lineGeometry = new THREE.Geometry();
 
     for (let i = 0; i < 2000; i++) {
-      const pointOne = LineCanvasController.createPoint(
+      const pointOne = LineCanvasComponent.createPoint(
         pointMaterial);
       scene.add(pointOne);
       // this.lineGeometry.vertices.push(pointOne.position);

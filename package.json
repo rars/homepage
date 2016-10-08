@@ -8,7 +8,7 @@
     "dist": "webpack --config webpack.config.dist.js -p",
     "dev": "webpack --config webpack.config.dev.js -d",
     "watch": "webpack --config webpack.config.dev.js --watch -d",
-    "typings": "typings install",
+    "typings": "typings install dt~node --save --global",
     "lint": "tslint -c tslint.json --project tsconfig.json"
   },
   "repository": {
@@ -38,17 +38,29 @@
     "raw-loader": "^0.5.1",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
-    "ts-loader": "^0.8.1",
+    "ts-loader": "^0.9.0",
     "tslint": "^3.15.1",
     "typescript": "^2.0.3",
     "typings": "^1.4.0",
     "url-loader": "^0.5.7",
-    "webpack": "^1.12.14"
+    "webpack": "^1.12.14",
+    "webpack-merge": "^0.14.1"
   },
   "dependencies": {
+    "@angular/common": "^2.0.1",
+    "@angular/compiler": "^2.0.1",
+    "@angular/core": "^2.0.1",
+    "@angular/http": "^2.0.1",
+    "@angular/platform-browser": "^2.0.1",
+    "@angular/platform-browser-dynamic": "^2.0.1",
+    "@angular/router": "^3.0.1",
     "angular": "^1.5.3",
     "angular-ui-router": "^0.3.1",
+    "core-js": "^2.4.1",
     "font-awesome": "^4.5.0",
-    "three": "^0.81.2"
+    "rxjs": "^5.0.0-beta.12",
+    "systemjs": "^0.19.39",
+    "three": "^0.81.2",
+    "zone.js": "^0.6.25"
   }
 }
