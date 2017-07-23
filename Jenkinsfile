@@ -1,9 +1,11 @@
-node {
-  stage "Checkout" {
+#!groovy
+
+node('node') {
+  stage('Checkout') {
     checkout scm
-    sh "npm install"
+    sh 'npm install'
   }
-  stage "Build" {
-    sh "npm run dist"
+  stage('Build') {
+    sh 'npm run dist'
   }
 }
