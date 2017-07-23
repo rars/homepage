@@ -1,6 +1,6 @@
 #!groovy
 
-node('node') {
+node('master') {
   stage('Checkout') {
     checkout scm
     sh 'npm install'
