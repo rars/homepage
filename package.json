@@ -8,7 +8,6 @@
     "dist": "webpack --config webpack.config.dist.js -p",
     "dev": "webpack --config webpack.config.dev.js -d",
     "watch": "webpack --config webpack.config.dev.js --watch -d",
-    "typings": "typings install dt~node --save --global",
     "lint": "tslint -c tslint.json --project tsconfig.json"
   },
   "repository": {
@@ -26,6 +25,11 @@
   },
   "homepage": "https://github.com/rars/homepage",
   "devDependencies": {
+    "@types/core-js": "^0.9.42",
+    "@types/jquery": "^3.2.9",
+    "@types/node": "^8.0.14",
+    "@types/three": "^0.84.18",
+    "angular2-template-loader": "^0.6.2",
     "css-loader": "^0.25.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
@@ -38,10 +42,9 @@
     "raw-loader": "^0.5.1",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
-    "ts-loader": "^0.9.0",
+    "ts-loader": "^2.3.1",
     "tslint": "^3.15.1",
     "typescript": "^2.0.3",
-    "typings": "^1.4.0",
     "url-loader": "^0.5.7",
     "webpack": "^1.12.14",
     "webpack-merge": "^0.14.1"
@@ -54,13 +57,11 @@
     "@angular/platform-browser": "^2.0.1",
     "@angular/platform-browser-dynamic": "^2.0.1",
     "@angular/router": "^3.0.1",
-    "angular": "^1.5.3",
-    "angular-ui-router": "^0.3.1",
     "core-js": "^2.4.1",
     "font-awesome": "^4.5.0",
-    "rxjs": "^5.0.0-beta.12",
+    "rxjs": "^5.4.2",
     "systemjs": "^0.19.39",
     "three": "^0.81.2",
-    "zone.js": "^0.6.25"
+    "zone.js": "^0.7.8"
   }
 }

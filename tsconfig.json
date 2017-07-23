@@ -5,11 +5,12 @@
     "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "outDir": "build"
+    "outDir": "build",
+    "lib": [
+        "es2016",
+        "dom"
+    ]
   },
-  "include": [
-    "typings/index.d.ts"
-  ],
   "exclude": [
     "node_modules",
     "dist"
